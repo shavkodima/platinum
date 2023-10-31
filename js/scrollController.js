@@ -171,30 +171,30 @@ function parallaxsImages() {
 }
 function parallaxImage(t, e) {
   let r = gsap.matchMedia();
-  r.add('(min-width: 568px)', () => {
+  // r.add('(min-width: 568px)', () => {
+  //   gsap.from(e, {
+  //     scale: 0.8,
+  //     scrollTrigger: {
+  //       trigger: t,
+  //       start: 'top 50%',
+  //       end: 'top 20%',
+  //       scroller: '[data-scroll-container]',
+  //       scrub: !0,
+  //     },
+  //   });
+  // }),
+  r.add('(max-width: 568px)', () => {
     gsap.from(e, {
-      scale: 0.8,
+      opacity: 0,
       scrollTrigger: {
         trigger: t,
-        start: 'top 50%',
-        end: 'top 20%',
+        start: 'top 80%',
+        end: 'bottom 50%',
         scroller: '[data-scroll-container]',
         scrub: !0,
       },
     });
-  }),
-    r.add('(max-width: 568px)', () => {
-      gsap.from(e, {
-        opacity: 0,
-        scrollTrigger: {
-          trigger: t,
-          start: 'top 80%',
-          end: 'bottom 50%',
-          scroller: '[data-scroll-container]',
-          scrub: !0,
-        },
-      });
-    });
+  });
 }
 function serviceItems() {
   let t = document.querySelector('.service__content'),
